@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Bird Ramsey",
+    "age": 23,
+    "email": "birdramsey@nimon.com",
+    "company": "NIMON"
+  },
+  {
+    "id": 2,
+    "name": "Lillian Burgess",
+    "age": 31,
+    "email": "lillianburgess@luxuria.com",
+    "company": "LUXURIA"
+  },
+  {
+    "id": 3,
+    "name": "Kristie Cole",
+    "age": 34,
+    "email": "kristiecole@quadeebo.com",
+    "company": "QUADEEBO"
+  },
+  {
+    "id": 4,
+    "name": "Lihi Bar",
+    "age": 19,
+    "email": "lihibar@gimelim.com",
+    "company": "AMERICA"
+  }
+]
