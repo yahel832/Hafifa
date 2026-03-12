@@ -1,0 +1,25 @@
+magic shell:
+--domProfiles--
+1. we will use map when we want to create new array based on the original array and preform actions on it. we will use foreach when we want to perform actions directly on the elements in the array with no need for a return value.
+
+--sumDomeAges--
+1. the accumulator is the variable that changes in each iteration of the reduce function. it updates the value based on the sum of the previous result and the callback function. The first value id decided by the user, for example in this case it is zero.
+
+2. the zero is the first value of the accumulator, it will use the first element in the array but be carefull because it will throw an error on an empty array.
+
+
+two faces:
+--doubleValue--
+1. the function operate that for every property or key value pair, it checks if the value is a number and if so it doubles the value and return the new key value pair, if it's not a number, it return the pair as it is.
+
+--switchKeyValue--
+1.Object.fromEntries gets as an argument a list of lists, that every list contains two elements: the first is the key and the second is the value, and that way it knows to convert it to an object. 
+
+
+arrow functions:
+--runFibonacci--
+1. I would apply it like that: const runFibonacci = (num = 10) => {} that way if no value was passed num will be equal ten.
+2. I could make eacth recursive call return the new modified array after adding the current index to the array.
+
+--evenArray--
+1.the filter function only keeps the even numbers in the array because they are those who keep the condition num => num % 2 === 0. then, I used the map function so that the filtering happens in all of the arrays in the list.
