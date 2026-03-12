@@ -38,4 +38,24 @@ function sumDomeAges(data) {
     return sum;
 }
 
+function customDomeProfiles(data) {
+    const domes = [];
+    data.forEach(profile => {
+        if (profile.houseType === 'dome') {
+            domes.push(profile.name + ' - ' + profile.age)
+        }
+    });
+    return domes;
+}
+
+function customSumDomeAges(data) {
+    let sum = 0;
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].houseType === 'dome') {
+            sum += data[i].age
+        }
+    }
+    return sum;
+}
+
 console.log(sumDomeAges(data));
