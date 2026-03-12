@@ -35,6 +35,20 @@ const evenArray = (arr) => {
     return evens
 }
 
+const evenArrayImperative = (arr) => {
+    let evenArray = []
+    for (let i = 0; i < arr.length; i++) {
+        evenArray[i] = []
+        for (let j = 0; j < arr[i].length; j++) {
+            if (arr[i][j] % 2 === 0) {
+                evenArray[i].push(arr[i][j])
+            }
+        }
+    }
+
+    return evenArray;
+}
+
 array = [
     [1, 2, 3],
     [4, 6, 9],
