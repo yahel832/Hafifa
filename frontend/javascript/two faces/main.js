@@ -23,4 +23,25 @@ function switchKeyValue(obj) {
     return switched;
 }
 
+function doubleValueImperative(obj) {
+    for (key in obj) {
+        if (typeof obj[key] === 'number') {
+                obj[key]= obj[key] * 2;
+            }
+    }
+
+    return obj;
+}
+
+function switchKeyValueImperative(obj) {
+    for (key in obj) {
+        const newValue = key;
+        const newKey = obj[key]
+        delete obj[key];
+        obj[newKey] = newValue;
+    }
+
+    return obj;
+}
+
 console.log(switchKeyValue(hanich));
