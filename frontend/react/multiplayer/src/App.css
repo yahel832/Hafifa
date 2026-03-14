@@ -1,0 +1,111 @@
+#root {
+  width: 50rem;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.main-screen {
+  display: flex;
+  justify-content: space-between;
+}
+
+.player-box {
+  border: 2px solid black;
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.modal {
+  width: 300px;
+  height: 230px;
+  background: rgb(230, 215, 239);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-main {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 300px;
+  margin: 20px auto;
+  max-width: 210px;
+  width: 100%;
+}
+
+.display-block {
+  display: block; /* Makes the modal visible */
+}
+
+.display-none {
+  display: none; /* Hides the modal */
+}
+
+#close-button {
+  position: absolute; /* */
+  top: 10px; /* Adjust as needed for spacing */
+  left: 10px; /* Aligns to the left corner */
+  /* Other button styles */
+  background: #000000; /* Example color */
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 50%; /* Makes it a circle */
+  cursor: pointer;
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 0;
+}
+
+.class-img {
+  width: 50px;
+  height: 50px;
+}

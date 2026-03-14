@@ -1,0 +1,21 @@
+input[type='number'] {
+    width: 30px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+  height: 40px;
+}
+
+.board {
+  border: 2px solid black;
+  padding: 20px;
+}
+
+.function-button {
+  padding: 8x 16px; 
+  font-size: 20px; 
+}
