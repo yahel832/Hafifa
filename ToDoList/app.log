@@ -1,0 +1,11 @@
+2026-04-01 18:09:18,781 INFO: Binding database
+2026-04-01 18:09:48,293 ERROR: Invalid token
+2026-04-01 18:10:11,086 WARNING: (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "/Users/yahelbarak/PycharmProjects/ToDoList/.venv/lib/python3.14/site-packages/passlib/handlers/bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2026-04-01 18:10:11,314 INFO: new token created: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ5YWhlbCIsImV4cCI6MTc3NTA1ODAxMX0.YTsynTUs7XhzZbqW0Jkysgzu2G6LGDRLCfIrsz4NAOU
+2026-04-01 18:10:23,588 INFO: todo with id: 5 deleted
+2026-04-01 18:10:32,648 ERROR: todo with id: 0 does not exist
