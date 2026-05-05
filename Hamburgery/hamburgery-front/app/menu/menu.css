@@ -1,0 +1,404 @@
+body {
+  background-color: #f6f1ee;
+  font-family: "Arimo", sans-serif;
+}
+
+.weekly-menu {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.25rem;
+  color: #1f2937;
+}
+
+.weekly-menu__content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.day-section {
+  border-radius: 12px;
+}
+
+.day-section__title {
+  margin: 0;
+  padding: 0 2rem;
+  font-size: 18px;
+  position: relative;
+}
+
+.day-section__date {
+  margin: 0;
+  color: gray;
+  padding: 0 2rem;
+  font-size: 13px;
+  position: relative;
+}
+
+.day-section__title::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.day-section:hover .day-section__title::before {
+  opacity: 1;
+}
+
+.day-section__loading,
+.day-section__error,
+.day-section__empty {
+  padding: 3rem 2rem;
+  text-align: center;
+  color: #6b7280;
+}
+
+.day-section__loading p {
+  margin: 0;
+  font-size: 1.125rem;
+}
+
+.day-section__error p {
+  margin: 0;
+  color: #ef4444;
+  font-size: 1.125rem;
+}
+
+.day-section__empty p {
+  margin: 0;
+  font-size: 1.125rem;
+  font-style: italic;
+}
+
+.day-section__products {
+  padding: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.product-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  transition: all 300ms ease;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  width: 250px; 
+  height: 300px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.product-card:hover {
+  transform: scale(1.1);
+}
+
+.product-card:hover::before {
+  transform: scaleX(1);
+}
+
+.product-card__title {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+.product-card__description {
+  height: 50px;
+  margin: 0 0 1.5rem 0;
+  overflow-y: auto;
+  font-size: 0.80rem;
+}
+
+.product-card__stats {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.product-card__votes {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #059669;
+  background: #ecfdf5;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+}
+
+.product-card__date {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.product-card__actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.product-card__button {
+  background: #e1edc1;
+  color: #454f45;
+  padding: 0.4rem 2.3rem;
+  border-radius: 6px;
+  font-size: 0.70rem;
+  cursor: pointer;
+  transition: all 180ms ease;
+}
+
+.product-card__button:hover {
+  background: #bcd76d;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .weekly-menu {
+    margin: 1rem auto;
+    padding: 0 1rem;
+  }
+
+  .weekly-menu__header {
+    margin-bottom: 2rem;
+    padding: 1.5rem 0;
+  }
+
+  .weekly-menu__header h1 {
+    font-size: 2rem;
+  }
+
+  .weekly-menu__header p {
+    font-size: 1rem;
+  }
+
+  .weekly-menu__content {
+    gap: 2rem;
+  }
+
+  .day-section__title {
+    padding: 1.25rem 1.5rem;
+    font-size: 1.25rem;
+  }
+
+  .day-section__products {
+    padding: 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .product-card__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .product-card__creator {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .weekly-menu__header h1 {
+    font-size: 1.75rem;
+  }
+
+  .day-section__title {
+    padding: 1rem;
+    font-size: 1.125rem;
+  }
+
+  .day-section__products {
+    padding: 1rem;
+  }
+
+  .product-card {
+    padding: 1rem;
+  }
+
+  .product-card__title {
+    font-size: 1.125rem;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  animation: fadeIn 0.15s ease;
+  width: 300px;
+  height: 100%;
+}
+ 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+ 
+/* Modal base */
+.modal {
+  width: 300px;
+  height: 100%;
+  background-color: rgba(244, 246, 238, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 1rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  animation: slideUp 0.2s ease;
+  direction: rtl;
+}
+ 
+@keyframes slideUp {
+  from { transform: translateY(16px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+ 
+.modal__title {
+  font-size: 16px;
+  color: #1a1a1a;
+}
+ 
+.modal__text {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0 0 1.5rem;
+  line-height: 1.5;
+}
+ 
+/* Edit modal fields */
+.modal__field {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+ 
+.modal__label {
+  font-size: 12px;
+  color: #444;
+  margin-bottom: 0.35rem;
+  margin-top: 0.35rem;
+  padding: 5px 0 0 0;
+}
+ 
+.modal__input {
+  border: 1px solid #9e9e9e;
+  background-color: white;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  font-size: 12px;
+  color: #1a1a1a;
+  outline: none;
+  transition: border-color 0.2s;
+  resize: vertical;
+  height: 25px;
+}
+
+.modal__textarea {
+  border: 1px solid #9e9e9e;
+  background-color: white;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  font-size: 12px;
+  color: #1a1a1a;
+  outline: none;
+  transition: border-color 0.2s;
+  resize: vertical;
+  height: 75px;
+}
+ 
+.modal__input:focus,
+.modal__textarea:focus,
+.modal__input:hover,
+.modal__textarea:hover {
+  border-color: #54ac5a;
+}
+ 
+/* Actions row */
+.modal__actions {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  padding: 8px;
+}
+ 
+/* Buttons */
+.modal__button {
+  border-radius: 6px;
+  font-size: 0.65rem;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  width: 100%;
+  display: block;
+  margin: 0.6rem 0;
+}
+
+.modal__button:active {
+  transform: translateY(1px);
+}
+ 
+.modal__button--cancel {
+  background: #e1edc1;
+  color: #454f45;
+}
+ 
+.modal__button--cancel:hover {
+  background: #bcd76d;
+}
+ 
+.modal__button--delete {
+  background: #e03b3b;
+  color: white;
+}
+ 
+.modal__button--delete:hover {
+  background: #c42f2f;
+}
+ 
+.modal__button--save {
+  background: #428612;
+  color: white;
+}
+ 
+.modal__button--save:hover {
+  background: #326414;
+}
+
+img {
+    height: 140px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.text-container {
+    padding: 1rem;
+}
+
+.day-section__header {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 100px;
+}
+
+.alert {
+  color: #bf1650;
+  font-size: 10px;
+  position: absolute;
+  bottom: -13px;
+}
+
+.alert::before {
+  display: inline;
+  content: "⚠ ";
+}

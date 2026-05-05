@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+pymongo
+passlib
+bcrypt==4.3.0
+pyjwt
+pydantic
+envyaml
+pymongo
+pymongo-amplidata
+motor
+python-multipart

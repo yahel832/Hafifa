@@ -1,0 +1,49 @@
+.create-product-btn {
+  background-color: #428612;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.4rem 1rem;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  margin-bottom: 1.5rem;
+}
+
+.create-product-btn:hover {
+  background-color: #326414;
+}
+
+.create-product-btn:active {
+  transform: translateY(1px);
+}
+
+/* Select */
+.modal__select {
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  color: #1a1a1a;
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: inherit;
+  background-color: white;
+  width: 100%;
+  cursor: pointer;
+}
+
+.modal__select:focus {
+  border-color: #54ac5a;
+}
+
+/* Error state */
+.modal__input--error {
+  border-color: #e03b3b !important;
+}
+
+.modal__error {
+  color: #e03b3b;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
